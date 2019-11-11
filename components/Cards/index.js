@@ -17,3 +17,40 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+axios.get("https://lambda-times-backend.herokuapp.com/articles")
+  .then(response => {
+    console.log(response)
+    let articles = response.data.articles
+    let js = articles.javascript
+    let boot = articles.bootstrap
+    let jquery = articles.jquery
+    let node = articles.node
+    let tech = articles.technology
+
+  js.forEach(element => {
+    document.querySelector('.cards-container').appendChild(CardCreator(element))
+  });
+
+  boot.forEach(element => {
+    document.querySelector('.cards-container').appendChild(CardCreator(element))
+  });
+
+  jquery.forEach(element => {
+    document.querySelector('.cards-container').appendChild(CardCreator(element))
+  });
+
+  node.forEach(element => {
+    document.querySelector('.cards-container').appendChild(CardCreator(element))
+  });
+
+  tech.forEach(element => {
+    document.querySelector('.cards-container').appendChild(CardCreator(element))
+  });
+})
+
+.catch(error => {
+  console.log(error)
+})
+
+} 
