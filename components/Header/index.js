@@ -15,7 +15,9 @@ function Header() {
   const title = document.createElement('h1');
   const temp = document.createElement('span');
 
-  headerDiv.appendChild(date, title, temp);
+  headerDiv.appendChild(date);
+  headerDiv.appendChild(title);
+  headerDiv.appendChild(temp);
 
   headerDiv.classList.add('header');
   date.classList.add('date');
@@ -27,3 +29,5 @@ function Header() {
 
   return headerDiv;
 }
+
+document.querySelector('.header-container').appendChild(Header());
